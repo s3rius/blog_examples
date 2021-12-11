@@ -1,0 +1,17 @@
+[package]
+name = "rusty_log_parser"
+version = "0.1.0"
+edition = "2018"
+
+[lib]
+# Название модуля
+name = "rusty_log_parser"
+# Обязательный тип крейта, чтобы можно было использовать его
+# в питоне.
+crate-type = ["cdylib"]
+
+[dependencies]
+# Библиотека биндингов для питона.
+pyo3 = { version = "0.15.1", features = ["extension-module"] }
+# Библиотека для сплита. Повторяет функционал shlex.
+shell-words = "1.0.0"

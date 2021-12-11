@@ -1,0 +1,28 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+# Метаданные ингресса.
+metadata:
+  name: req-counter-ingress
+  labels:
+    name: req-counter-ingress
+spec:
+  # Правила роутинга.
+  rules:
+    # Требуемый хост.
+  - host: req-counter.local
+    http:
+      paths:
+        # Тип пути Prefix значит,
+        # что все запросы, которые начинаются c
+        # ${path} будут матчится тут.
+      - pathType: Prefix
+        # Сам путь.
+        path: "/"
+        backend:
+          service:
+            # Название нашего сервиса.
+            name: req-counter-service
+            # Порт сервиса, куда перенаправлять входящий трафик.
+            port: 
+              number: 80

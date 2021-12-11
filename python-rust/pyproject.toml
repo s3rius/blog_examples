@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "python-rust"
+version = "0.1.0"
+description = "Python and Rust integration Demo"
+authors = ["Pavel Kirilin <win10@list.ru>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+typer = "^0.4.0"
+rusty_log_parser = { path = "./rusty_log_parser" }
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+black = "^21.12b0"
+isort = "^5.10.1"
+mypy = "^0.910"
+yesqa = "^1.3.0"
+autoflake = "^1.4"
+wemake-python-styleguide = "^0.15.3"
+
+[tool.poetry.scripts]
+pyrust = "python_rust.main:main"
+
+[tool.mypy]
+strict = true
+ignore_missing_imports = true
+allow_subclassing_any = true
+allow_untyped_calls = true
+pretty = true
+show_error_codes = true
+implicit_reexport = true
+allow_untyped_decorators = true
+warn_return_any = false
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

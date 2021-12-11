@@ -1,0 +1,12 @@
+{
+  "name": "req_counter",
+  "version": "1.0.0",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "server": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
